@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/saas-landing-page',
   eslint: {
     ignoreDuringBuilds: true,
   },

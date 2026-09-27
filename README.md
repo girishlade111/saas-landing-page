@@ -1,30 +1,122 @@
 # SaaS Landing Page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A modern, dark-themed SaaS landing page template built with Next.js (originally
+generated with v0.app). It ships with a complete marketing-page layout: animated
+hero, features grid, testimonials, pricing section, FAQ accordion, new-release
+promo banner, sticky footer, and mock login/signup pages — everything a SaaS
+startup needs for its homepage in one drop-in template.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gileb64375-5584s-projects/v0-saa-s-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/UdfMkn4M7Ms)
+## Features
 
-## Overview
+- **Animated hero section** — staggered Framer Motion entrance animations over a
+  pearl-mist radial glow background
+- **Sticky shrinking navbar** — rounded glass navbar that contracts on scroll,
+  with smooth-scroll anchor navigation and a mobile menu
+- **Features grid** — product feature cards with icons
+- **Testimonials section** — social proof with customer quotes
+- **Pricing section** — tiered pricing cards
+- **FAQ accordion** — Radix-based accessible accordion
+- **New-release promo banner** — announcement strip for launches/updates
+- **Sticky footer** — full-width footer with links
+- **Login / signup pages** — ready-made auth page UI shells
+- **Dark theme** — next-themes provider, dark mode by default
+- **Magic UI components** — extra animated marketing components included
+- **Fully responsive** — mobile, tablet, and desktop layouts
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Tech Stack
+
+- [Next.js](https://nextjs.org) 15 (App Router, static export)
+- [React](https://react.dev) 19
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com) 3
+- [shadcn/ui](https://ui.shadcn.com) + Radix UI primitives
+- [Framer Motion](https://www.framer.com/motion/) — animations
+- [next-themes](https://github.com/pacocoursey/next-themes) — theming
+- [lucide-react](https://lucide.dev) — icons
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18 or later
+- npm (or pnpm/yarn)
+
+### Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+### Build for production
+
+```bash
+npm run build
+npm start
+```
+
+The project is configured for static export (`output: "export"`), so
+`npm run build` produces a fully static site in the `out/` directory that can
+be hosted on any static host (GitHub Pages, Cloudflare Pages, Netlify, Vercel).
+
+## Project Structure
+
+```
+app/                  # Next.js App Router
+  page.tsx            # Home page (hero + sections)
+  layout.tsx          # Root layout, theme provider, fonts
+  login/page.tsx      # Login page shell
+  signup/page.tsx     # Signup page shell
+components/
+  home/               # Hero and other home-specific components
+  magicui/            # Animated marketing components
+  ui/                 # shadcn/ui primitives
+  features.tsx        # Features grid
+  testimonials.tsx    # Testimonials section
+  pricing-section.tsx # Pricing cards
+  faq-section.tsx     # FAQ accordion
+  new-release-promo.tsx
+  sticky-footer.tsx
+  theme-provider.tsx
+lib/
+  utils.ts            # cn() class-name helper
+public/               # Static assets
+styles/
+  globals.css         # Tailwind + global styles
+next.config.mjs       # Static export + basePath config
+```
+
+## Environment Variables
+
+None required. The template runs entirely client-side with no backend.
 
 ## Deployment
 
-Your project is live at:
+This repo is deployed as a static site on **GitHub Pages**:
 
-**[https://vercel.com/gileb64375-5584s-projects/v0-saa-s-landing-page](https://vercel.com/gileb64375-5584s-projects/v0-saa-s-landing-page)**
+- Live URL: https://girishlade111.github.io/saas-landing-page/
+- Deployment: `output: "export"` static build pushed to the `gh-pages` branch.
 
-## Build your app
+Notes:
 
-Continue building your app on:
+- `basePath` is set to `/saas-landing-page` so assets resolve correctly under
+  the GitHub Pages subpath. **Remove the `basePath` line from `next.config.mjs`
+  if you deploy to a root domain (Vercel/Netlify/Cloudflare Pages root) — or set
+  it to your own subpath.**
+- `images.unoptimized` is enabled because static export has no image optimizer.
+- Next.js was bumped to 15.2.8 to patch CVE-2025-55182 (React2Shell, CVSS 10.0)
+  and related vulnerabilities.
 
-**[https://v0.app/chat/projects/UdfMkn4M7Ms](https://v0.app/chat/projects/UdfMkn4M7Ms)**
+## Customizing
 
-## How It Works
+- Edit `app/page.tsx` to reorder or remove sections.
+- Marketing copy lives in each component under `components/` — search for the
+  text you want to change.
+- Global styles and Tailwind tokens are in `styles/globals.css` and
+  `components.json`.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+
+Built by Girish Lade — https://ladestack.in
